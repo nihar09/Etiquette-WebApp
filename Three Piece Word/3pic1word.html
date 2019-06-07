@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Three Piece Word</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+     <link rel="stylesheet" type="text/css" href="bootstrap.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript">
+  function timeout()
+      {
+        //var minute=Math.floor((timeLeft-(hours*60*60))/60);
+        var minute=Math.floor(timeLeft/60);
+        var second=timeLeft%60;
+        //var hrs=checktime(hours);
+        var mint=checktime(minute);
+        var sec=checktime(second);
+        if(timeLeft<0)
+        {
+            clearTimeout(tm);
+            document.getElementById("c1").innerHTML = "";
+            document.getElementById("totscore").innerHTML = "Total correct answer " + score;
+              document.getElementById("totcoins").innerHTML = "Total coins achieved " + score;
+              document.getElementById("coins").hidden = false;
+              document.getElementById("drop").play();
+            document.getElementById("my_audio").pause();
+            document.getElementById("my_end").play();
+            delay(5000);
+            document.getElementById("my_end").pause();
+            if(score==5)
+            {
+
+              document.getElementById("congrats").innerHTML = "Congratulations You solved all three piece words";
+              document.getElementById("totscore").innerHTML = "Total correct answer " + score;
+              document.getElementById("totcoins").innerHTML = "Total coins achieved " + score;
+            }
+            else
+            {
+              document.getElementById("totscore").innerHTML = "Total correct answer " + score;
+              document.getElementById("totcoins").innerHTML = "Total coins achieved " + score;
+            }
+        }
+        else
+        {
+            document.getElementById("time").innerHTML=mint+":"+sec;
+        }
+        timeLeft--;
+        var tm=setTimeout(function(){timeout()},1000);
+      }
+      function checktime(msg)
+      {
+        if(msg<10)
+        {
+            msg="0"+msg;
+        }
+        return msg;
+      }
+</script>
+  <style type="text/css">
+    body{
+      background-color: #fdfff7;
+    }
+
+  .button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 1px 12px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.buttons {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 1px 1px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+
+.button1:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+input[type=text], select {
+  font-size: 13px;
+  text-align: center;
+  width: 30%;
+  padding: 5px 5px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+  .ml10 {
+  position: relative;
+  font-weight: 900;
+  font-size: 4em;
+}
+
+.ml102 {
+  position: relative;
+  font-weight: 900;
+  font-size: 4em;
+}
+
+.ml103 {
+  position: relative;
+  font-weight: 900;
+  font-size: 4em;
+}
+
+.ml104 {
+  position: relative;
+  font-weight: 900;
+  font-size: 4em;
+}
+
+.ml105 {
+  position: relative;
+  font-weight: 900;
+  font-size: 4em;
+}
+
+.ml10 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml102 .text-wrapper2 {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml103 .text-wrapper3 {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml104 .text-wrapper4 {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml105 .text-wrapper5 {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml10 .letter {
+  display: inline-block;
+  line-height: 1em;
+  color: green;
+  transform-origin: 0 0;
+}
+
+.ml102 .letter2 {
+  display: inline-block;
+  line-height: 1em;
+  color: green;
+  transform-origin: 0 0;
+}
+
+.ml103 .letter3 {
+  display: inline-block;
+  line-height: 1em;
+  color: green;
+  transform-origin: 0 0;
+}
+
+.ml104 .letter4 {
+  display: inline-block;
+  line-height: 1em;
+  color: green;
+  transform-origin: 0 0;
+}
+
+.ml105 .letter5 {
+  display: inline-block;
+  line-height: 1em;
+  color: green;
+  transform-origin: 0 0;
+}
+
+.ml2 {
+  font-weight: 900;
+  font-size: 3.5em;
+}
+
+.ml2 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #f44336;
+}
+
+.button2:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+div.angrytext {
+ font-size:70px;
+ font-weight:bold;
+ color:#4794D3;
+ width:300px;
+ margin:90px auto;
+
+ -webkit-animation: alert 2s linear 0s infinite normal ;
+ animation: alert 2s linear 0s infinite normal ;
+}
+
+@-webkit-keyframes alert {
+  0%{
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  }
+  5%{
+  -webkit-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  10%{
+  -webkit-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  15%{
+  -webkit-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  20%{
+  -webkit-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  25%{
+  -webkit-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  30%{
+  -webkit-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  35%{
+  -webkit-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  40%{
+  -webkit-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  45%{
+  -webkit-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  50%{
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  }
+}
+
+@keyframes alert {
+  0%{
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  }
+  5%{
+  -ms-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  10%{
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  15%{
+  -ms-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  20%{
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  25%{
+  -ms-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  30%{
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  35%{
+  -ms-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  40%{
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  45%{
+  -ms-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  50%{
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  }
+}
+
+div.angrytime {
+ -webkit-animation: alert 2s linear 0s infinite normal ;
+ animation: alert 2s linear 0s infinite normal ;
+}
+
+@-webkit-keyframes alert {
+  0%{
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  }
+  5%{
+  -webkit-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  10%{
+  -webkit-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  15%{
+  -webkit-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  20%{
+  -webkit-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  25%{
+  -webkit-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  30%{
+  -webkit-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  35%{
+  -webkit-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  40%{
+  -webkit-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  45%{
+  -webkit-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  50%{
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  }
+}
+
+@keyframes alert {
+  0%{
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  }
+  5%{
+  -ms-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  10%{
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  15%{
+  -ms-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  20%{
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  25%{
+  -ms-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  30%{
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  35%{
+  -ms-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  40%{
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  45%{
+  -ms-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  50%{
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  }
+}
+</style>
+  <script type="text/javascript">
+    var score=0;
+    function b(id)
+    {
+      if(document.getElementById("b1").value=="")
+      {
+        document.getElementById("b1").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("b2").value=="")
+      {
+        document.getElementById("b2").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("b3").value=="")
+      {
+        document.getElementById("b3").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("b4").value=="")
+      {
+        document.getElementById("b4").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("b5").value=="")
+      {
+        document.getElementById("b5").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("b6").value=="")
+      {
+        document.getElementById("b6").value = document.getElementById(id).value;
+      }
+    }
+    function g(id)
+    {
+      if(document.getElementById("g1").value=="")
+      {
+        document.getElementById("g1").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("g2").value=="")
+      {
+        document.getElementById("g2").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("g3").value=="")
+      {
+        document.getElementById("g3").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("g4").value=="")
+      {
+        document.getElementById("g4").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("g5").value=="")
+      {
+        document.getElementById("g5").value = document.getElementById(id).value;
+      }
+    }
+    function gr(id)
+    {
+      if(document.getElementById("gr1").value=="")
+      {
+        document.getElementById("gr1").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("gr2").value=="")
+      {
+        document.getElementById("gr2").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("gr3").value=="")
+      {
+        document.getElementById("gr3").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("gr4").value=="")
+      {
+        document.getElementById("gr4").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("gr5").value=="")
+      {
+        document.getElementById("gr5").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("gr6").value=="")
+      {
+        document.getElementById("gr6").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("gr7").value=="")
+      {
+        document.getElementById("gr7").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("gr8").value=="")
+      {
+        document.getElementById("gr8").value = document.getElementById(id).value;
+      }
+    }
+    function t(id)
+    {
+      if(document.getElementById("t1").value=="")
+      {
+        document.getElementById("t1").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("t2").value=="")
+      {
+        document.getElementById("t2").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("t3").value=="")
+      {
+        document.getElementById("t3").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("t4").value=="")
+      {
+        document.getElementById("t4").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("t5").value=="")
+      {
+        document.getElementById("t5").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("t6").value=="")
+      {
+        document.getElementById("t6").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("t7").value=="")
+      {
+        document.getElementById("t7").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("t8").value=="")
+      {
+        document.getElementById("t8").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("t9").value=="")
+      {
+        document.getElementById("t9").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("t10").value=="")
+      {
+        document.getElementById("t10").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("t11").value=="")
+      {
+        document.getElementById("t11").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("t12").value=="")
+      {
+        document.getElementById("t12").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("t13").value=="")
+      {
+        document.getElementById("t13").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("t14").value=="")
+      {
+        document.getElementById("t14").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("t15").value=="")
+      {
+        document.getElementById("t15").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("t16").value=="")
+      {
+        document.getElementById("t16").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("t17").value=="")
+      {
+        document.getElementById("t17").value = document.getElementById(id).value;
+      }
+    }
+    function a(id)
+    {
+      if(document.getElementById("a1").value=="")
+      {
+        document.getElementById("a1").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("a2").value=="")
+      {
+        document.getElementById("a2").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("a3").value=="")
+      {
+        document.getElementById("a3").value = document.getElementById(id).value;
+      }
+      else if(document.getElementById("a4").value=="")
+      {
+        document.getElementById("a4").value = document.getElementById(id).value;
+      }
+    }
+    function ans1()
+    {
+      document.getElementById("button1").disabled = true;
+      document.getElementById("greet").innerHTML = "PLEASE";
+    }
+    function check()
+    {
+      if(document.getElementById("b1").value == "P" && document.getElementById("b2").value == "L" && document.getElementById("b3").value == "E" && document.getElementById("b4").value == "A" && document.getElementById("b5").value == "S" && document.getElementById("b6").value == "E")
+      {
+        score++;
+        document.getElementById("scoring").innerHTML = "Your Score is " + score;
+        // Wrap every letter in a span
+        document.getElementById("greet").innerHTML = "Correct";
+        $('.ml10 .letters').each(function(){
+          $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+        });
+
+        anime.timeline({loop: true})
+          .add({
+            targets: '.ml10 .letter',
+            rotateY: [-90, 0],
+            duration: 1300,
+            delay: function(el, i) {
+              return 45 * i;
+            }
+          }).add({
+            targets: '.ml10',
+            opacity: 0,
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 1000
+          });
+        document.getElementById("button1").disabled = true;
+        if(score == 5)
+    {
+      // Wrap every letter in a span
+      document.getElementById("congrats").innerHTML = "Congratulations You solved all three piece words";
+      document.getElementById("part1").hidden = false;
+            document.getElementById("goodjob").hidden = false;
+            document.getElementById("part2").hidden = false;
+      $('.ml2').each(function(){
+        $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+      });
+
+      anime.timeline({loop: true})
+        .add({
+        targets: '.ml2 .letter',
+        scale: [4,1],
+        opacity: [0,1],
+        translateZ: 0,
+        easing: "easeOutExpo",
+        duration: 950,
+        delay: function(el, i) {
+          return 70*i;
+        }
+        }).add({
+        targets: '.ml2',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+        });
+        document.getElementById("totscore").innerHTML = "Total correct answer " + score;
+              document.getElementById("totcoins").innerHTML = "Total coins achieved " + score;
+              document.getElementById("coins").hidden = false;
+              document.getElementById("my_audio").pause();
+      setTimeout(function(){ 
+      document.getElementById("drop").play(); 
+      }, 1000)
+    }
+      }
+      else
+      {
+        var str = "<h3 style='font-size: 12pt; font-weight: bold; font-family: Comic Sans MS, Comic Sans, cursive;'>Oops! Its incorrect. Try again!</h3>";
+        var res = str.fontcolor("red");
+        document.getElementById("greet").innerHTML = res;
+      }
+    }
+    function ans2()
+    {
+      document.getElementById("button2").disabled = true;
+      document.getElementById("greet2").innerHTML = "SORRY";
+    }
+    function check2()
+    {
+      if(document.getElementById("g1").value == "S" && document.getElementById("g2").value == "O" && document.getElementById("g3").value == "R" && document.getElementById("g4").value == "R"  && document.getElementById("g5").value == "Y")
+      {
+        score++;
+        document.getElementById("scoring").innerHTML = "Your Score is " + score;
+        // Wrap every letter in a span
+        document.getElementById("greet2").innerHTML = "Correct";
+        $('.ml102 .letters2').each(function(){
+          $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter2'>$&</span>"));
+        });
+
+        anime.timeline({loop: true})
+          .add({
+            targets: '.ml102 .letter2',
+            rotateY: [-90, 0],
+            duration: 1300,
+            delay: function(el, i) {
+              return 45 * i;
+            }
+          }).add({
+            targets: '.ml102',
+            opacity: 0,
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 1000
+          });
+        document.getElementById("button2").disabled = true;
+        if(score == 5)
+    {
+      // Wrap every letter in a span
+      document.getElementById("congrats").innerHTML = "Congratulations You solved all three piece words";
+      document.getElementById("part1").hidden = false;
+            document.getElementById("goodjob").hidden = false;
+            document.getElementById("part2").hidden = false;
+      $('.ml2').each(function(){
+        $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+      });
+
+      anime.timeline({loop: true})
+        .add({
+        targets: '.ml2 .letter',
+        scale: [4,1],
+        opacity: [0,1],
+        translateZ: 0,
+        easing: "easeOutExpo",
+        duration: 950,
+        delay: function(el, i) {
+          return 70*i;
+        }
+        }).add({
+        targets: '.ml2',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+        });
+        document.getElementById("totscore").innerHTML = "Total correct answer " + score;
+              document.getElementById("totcoins").innerHTML = "Total coins achieved " + score;
+              document.getElementById("coins").hidden = false;
+              document.getElementById("my_audio").pause();
+      setTimeout(function(){ 
+      document.getElementById("drop").play(); 
+      }, 1000)
+    }
+      }
+      else
+      {
+        var str = "<h3 style='font-size: 12pt; font-weight: bold; font-family: Comic Sans MS, Comic Sans, cursive;'>Oops! Its incorrect. Try again!</h3>";
+        var res = str.fontcolor("red");
+        document.getElementById("greet2").innerHTML = res;
+      }
+    }
+    function ans3()
+    {
+      document.getElementById("button3").disabled = true;
+      document.getElementById("greet3").innerHTML = "THANKYOU";
+    }
+    function check3()
+    {
+      if(document.getElementById("gr1").value == "T" && document.getElementById("gr2").value == "H" && document.getElementById("gr3").value == "A" && document.getElementById("gr4").value == "N" && document.getElementById("gr5").value == "K" && document.getElementById("gr6").value == "Y" && document.getElementById("gr7").value == "O" && document.getElementById("gr8").value == "U")
+      {
+        score++;
+        document.getElementById("scoring").innerHTML = "Your Score is " + score;
+        // Wrap every letter in a span
+        document.getElementById("greet3").innerHTML = "Correct";
+        $('.ml103 .letters3').each(function(){
+          $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter3'>$&</span>"));
+        });
+
+        anime.timeline({loop: true})
+          .add({
+            targets: '.ml103 .letter3',
+            rotateY: [-90, 0],
+            duration: 1300,
+            delay: function(el, i) {
+              return 45 * i;
+            }
+          }).add({
+            targets: '.ml103',
+            opacity: 0,
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 1000
+          });
+        document.getElementById("button3").disabled = true;
+        if(score == 5)
+    {
+      // Wrap every letter in a span
+      document.getElementById("congrats").innerHTML = "Congratulations You solved all three piece words";
+      document.getElementById("part1").hidden = false;
+            document.getElementById("goodjob").hidden = false;
+            document.getElementById("part2").hidden = false;
+      $('.ml2').each(function(){
+        $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+      });
+
+      anime.timeline({loop: true})
+        .add({
+        targets: '.ml2 .letter',
+        scale: [4,1],
+        opacity: [0,1],
+        translateZ: 0,
+        easing: "easeOutExpo",
+        duration: 950,
+        delay: function(el, i) {
+          return 70*i;
+        }
+        }).add({
+        targets: '.ml2',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+        });
+        document.getElementById("totscore").innerHTML = "Total correct answer " + score;
+              document.getElementById("totcoins").innerHTML = "Total coins achieved " + score;
+              document.getElementById("coins").hidden = false;
+              document.getElementById("my_audio").pause();
+      setTimeout(function(){ 
+      document.getElementById("drop").play(); 
+      }, 1000)
+    }
+
+      }
+      else
+      {
+        var str = "<h3 style='font-size: 12pt; font-weight: bold; font-family: Comic Sans MS, Comic Sans, cursive;'>Oops! Its incorrect. Try again!</h3>";
+        var res = str.fontcolor("red");
+        document.getElementById("greet3").innerHTML = res;
+      }
+    }
+    function ans4()
+    {
+      document.getElementById("button4").disabled = true;
+      document.getElementById("greet4").innerHTML = "HUMANCIVILIZATION";
+    }
+    function check4()
+    {
+      if(document.getElementById("t1").value == "H" && document.getElementById("t2").value == "U" && document.getElementById("t3").value == "M" && document.getElementById("t4").value == "A" && document.getElementById("t5").value == "N" && document.getElementById("t6").value == "C" && document.getElementById("t7").value == "I" && document.getElementById("t8").value == "V" && document.getElementById("t9").value == "I" && document.getElementById("t10").value == "L" && document.getElementById("t11").value == "I" && document.getElementById("t12").value == "Z" && document.getElementById("t13").value == "A" && document.getElementById("t14").value == "T" && document.getElementById("t15").value == "I" && document.getElementById("t16").value == "O" && document.getElementById("t17").value == "N")
+      {
+        score++;
+        document.getElementById("scoring").innerHTML = "Your Score is " + score;
+        // Wrap every letter in a span
+        document.getElementById("greet4").innerHTML = "Correct";
+        $('.ml104 .letters4').each(function(){
+          $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter4'>$&</span>"));
+        });
+
+        anime.timeline({loop: true})
+          .add({
+            targets: '.ml104 .letter4',
+            rotateY: [-90, 0],
+            duration: 1300,
+            delay: function(el, i) {
+              return 45 * i;
+            }
+          }).add({
+            targets: '.ml104',
+            opacity: 0,
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 1000
+          });
+        document.getElementById("button4").disabled = true;
+        if(score == 5)
+    {
+      // Wrap every letter in a span
+      document.getElementById("congrats").innerHTML = "Congratulations You solved all three piece words";
+
+      document.getElementById("part1").hidden = false;
+            document.getElementById("goodjob").hidden = false;
+            document.getElementById("part2").hidden = false;
+      $('.ml2').each(function(){
+        $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+      });
+
+      anime.timeline({loop: true})
+        .add({
+        targets: '.ml2 .letter',
+        scale: [4,1],
+        opacity: [0,1],
+        translateZ: 0,
+        easing: "easeOutExpo",
+        duration: 950,
+        delay: function(el, i) {
+          return 70*i;
+        }
+        }).add({
+        targets: '.ml2',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+        });
+        document.getElementById("totscore").innerHTML = "Total correct answer " + score;
+              document.getElementById("totcoins").innerHTML = "Total coins achieved " + score;
+              document.getElementById("coins").hidden = false;
+              document.getElementById("my_audio").pause();
+      setTimeout(function(){ 
+      document.getElementById("drop").play(); 
+      }, 1000)
+    }
+      }
+      else
+      {
+        var str = "<h3 style='font-size: 12pt; font-weight: bold; font-family: Comic Sans MS, Comic Sans, cursive;'>Oops! Its incorrect. Try again!</h3>";
+        var res = str.fontcolor("red");
+        document.getElementById("greet4").innerHTML = res;
+      }
+    }
+    function ans5()
+    {
+      document.getElementById("button5").disabled = true;
+      document.getElementById("greet5").innerHTML = "LOUD";
+    }
+    function check5()
+    {
+      if(document.getElementById("a1").value == "L" && document.getElementById("a2").value == "O" && document.getElementById("a3").value == "U" && document.getElementById("a4").value == "D")
+      {
+        score++;
+        document.getElementById("scoring").innerHTML = "Your Score is " + score;
+        // Wrap every letter in a span
+        document.getElementById("greet5").innerHTML = "Correct";
+        $('.ml105 .letters5').each(function(){
+          $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter5'>$&</span>"));
+        });
+
+        anime.timeline({loop: true})
+          .add({
+            targets: '.ml105 .letter5',
+            rotateY: [-90, 0],
+            duration: 1300,
+            delay: function(el, i) {
+              return 45 * i;
+            }
+          }).add({
+            targets: '.ml105',
+            opacity: 0,
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 1000
+          });
+        document.getElementById("button5").disabled = true;
+        document.getElementById("totscore").innerHTML = "Total correct answer " + score;
+              document.getElementById("totcoins").innerHTML = "Total coins achieved " + score;
+              document.getElementById("coins").hidden = false;
+              document.getElementById("my_audio").pause();
+      setTimeout(function(){ 
+      document.getElementById("drop").play(); 
+      }, 1000)
+        if(score == 5)
+    {
+      // Wrap every letter in a span
+      document.getElementById("congrats").innerHTML = "Congratulations You solved all three piece words";
+      document.getElementById("part1").hidden = false;
+            document.getElementById("goodjob").hidden = false;
+            document.getElementById("part2").hidden = false;
+      $('.ml2').each(function(){
+        $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+      });
+
+      anime.timeline({loop: true})
+        .add({
+        targets: '.ml2 .letter',
+        scale: [4,1],
+        opacity: [0,1],
+        translateZ: 0,
+        easing: "easeOutExpo",
+        duration: 950,
+        delay: function(el, i) {
+          return 70*i;
+        }
+        }).add({
+        targets: '.ml2',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+        });
+        document.getElementById("totscore").innerHTML = "Total correct answer " + score;
+              document.getElementById("totcoins").innerHTML = "Total coins achieved " + score;
+              document.getElementById("coins").hidden = false;
+              document.getElementById("my_audio").pause();
+      setTimeout(function(){ 
+      document.getElementById("drop").play(); 
+      }, 1000)
+    }
+      }
+      else
+      {
+        var str = "<h3 style='font-size: 12pt; font-weight: bold; font-family: Comic Sans MS, Comic Sans, cursive;'>Oops! Its incorrect. Try again!</h3>";
+        var res = str.fontcolor("red");
+        document.getElementById("greet5").innerHTML = res;
+      }
+    }
+  </script>
+  <script type="text/javascript">
+    function next1()
+    {
+      document.getElementById("img4").hidden = true;
+      document.getElementById("img5").hidden = true;
+      document.getElementById("img6").hidden = true;
+      document.getElementById("img7").hidden = true;
+      document.getElementById("img8").hidden = true;
+      document.getElementById("img9").hidden = true;
+      document.getElementById("img10").hidden = true;
+      document.getElementById("img11").hidden = true;
+      document.getElementById("img12").hidden = true;
+      document.getElementById("img13").hidden = true;
+      document.getElementById("img14").hidden = true;
+      document.getElementById("img15").hidden = true;
+
+      document.getElementById("img1").hidden = false;
+
+      document.getElementById("img1").src = 'data:image/png;base64,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';
+
+      document.getElementById("img2").hidden = false;
+      document.getElementById("img2").src = 'data:image/jpeg;base64,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';
+
+      document.getElementById("img3").hidden = false;
+      document.getElementById("img3").src = 'https://res.cloudinary.com/teepublic/image/private/s--vV9dYm1f--/t_Preview/b_rgb:c8e0ec,c_limit,f_jpg,h_630,q_90,w_630/v1528216718/production/designs/2758466_0.jpg';
+
+      var lines = "<div id = 'c1' class= 'container' style = 'text-align : center; font-family: Comic Sans MS, Comic Sans, cursive;'><br><input type='text' name='text' id='b1' style='width: 30px' maxlength='1'><input type='text' name='text' id='b2' style='width: 30px' maxlength='1'><input type='text' name='text' id='b3' style='width: 30px' maxlength='1'><input type='text' name='text' id='b4' style='width: 30px' maxlength='1'><input type='text' name='text' id='b5' style='width: 30px' maxlength='1'><input type='text' name='text' id='b6' style='width: 30px' maxlength='1'><input type='button' style='font-size: 13.5pt ; font-family: Comic Sans MS, Comic Sans, cursive;' id='button1' name='submit' value='Submit' class='button button1 rounded mx-auto d-block' onclick='check()'><input type='button' class='buttons button2' style='width: 30px' name='words' value='N' id='n' onclick='b(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='P' id='p' onclick='b(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='C' id='c' onclick='b(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='O' id='o' onclick='b(id)'><input type='button' class='buttons button2' style='width: 30px' name= 'words' value='S' id='s' onclick='b(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='A' id='a' onclick='b(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='E' id='e' onclick='b(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='L' id='l' onclick='b(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='I' id='i' onclick='b(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='E' id='e' onclick='b(id)'><h1 class='ml10'><span class='text-wrapper'><span class='letters' id='greet' style='text-align: center;'></span></span></h1><input style='font-size: 13.5pt ; font-family: Comic Sans MS, Comic Sans, cursive;' class = 'button button1' type='button' name='next' id='n1' value='Next' onclick='next2()'><input style='font-size: 13.5pt ; font-family: Comic Sans MS, Comic Sans, cursive;' class = 'button button1' type='button' name='show' id='show1' value='Show Answer' onclick='ans1()'>";
+      document.getElementById("result").innerHTML = lines;
+    }
+
+    function next2()
+    {
+      document.getElementById("img1").hidden = true;
+      document.getElementById("img2").hidden = true;
+      document.getElementById("img3").hidden = true;
+      document.getElementById("img7").hidden = true;
+      document.getElementById("img8").hidden = true;
+      document.getElementById("img9").hidden = true;
+      document.getElementById("img10").hidden = true;
+      document.getElementById("img11").hidden = true;
+      document.getElementById("img12").hidden = true;
+      document.getElementById("img13").hidden = true;
+      document.getElementById("img14").hidden = true;
+      document.getElementById("img15").hidden = true;
+      //document.getElementById("form1").hidden = true;
+      document.getElementById("img4").hidden = false;
+      document.getElementById("img4").src = 'https://i3.wp.com/chittagongit.com/images/sorry-icon/sorry-icon-14.jpg';
+
+      document.getElementById("img5").hidden = false;
+      document.getElementById("img5").src = 'https://i0.wp.com/cdn.onlinewebfonts.com/svg/img_505344.png';
+
+      document.getElementById("img6").hidden = false;
+      document.getElementById("img6").src = 'https://www.residentadvisor.net/images/clubs/fr-pardon.jpg';
+
+      var lines = "<div id = 'c1' class= 'container' style = 'text-align : center; font-family: Comic Sans MS, Comic Sans, cursive;'><br><input type='text' name='text' id='g1' style='width: 30px' maxlength='1'><input type='text' name='text' id='g2' style='width: 30px' maxlength='1'><input type='text' name='text' id='g3' style='width: 30px' maxlength='1'><input type='text' name='text' id='g4' style='width: 30px' maxlength='1'><input type='text' name='text' id='g5' style='width: 30px' maxlength='1'><br><input type='button' style='font-size: 13.5pt ; font-family: Comic Sans MS, Comic Sans, cursive;' id='button2' name='submit' value='Submit' class='button button1 rounded mx-auto d-block' onclick='check2()'><input type='button' class='buttons button2' style='width: 30px' name='words' value='Y' id='y' onclick='g(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='A' id='a' onclick='g(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='C' id='c' onclick='g(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='D' id='d' onclick='g(id)'><input type='button' class='buttons button2' style='width:30px' name='words' value='O' id='o' onclick='g(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='N' id='n' onclick='g(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='M' id='m' onclick='g(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='S' id='s' onclick='g(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='R' id='r' onclick='g(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='R' id='r' onclick='g(id)'><h1 class='ml102'><span class='text-wrapper2'><span class='letters2' id='greet2' style='text-align: center;'></span></span></h1><input style='font-size: 13.5pt ; font-family: Comic Sans MS, Comic Sans, cursive;' class = 'button button1' type='button' name='next' id='n2' value='Next' onclick='next3()'><input style='font-size: 13.5pt ; font-family: Comic Sans MS, Comic Sans, cursive;' class = 'button button1' type='button' name='show' id='show2' value='Show Answer' onclick='ans2()'>";
+      document.getElementById("result").innerHTML = lines;
+    }
+
+    function next3()
+    {
+      document.getElementById("img1").hidden = true;
+      document.getElementById("img2").hidden = true;
+      document.getElementById("img3").hidden = true;
+      document.getElementById("img4").hidden = true;
+      document.getElementById("img5").hidden = true;
+      document.getElementById("img6").hidden = true;
+      document.getElementById("img10").hidden = true;
+      document.getElementById("img11").hidden = true;
+      document.getElementById("img12").hidden = true;
+      document.getElementById("img13").hidden = true;
+      document.getElementById("img14").hidden = true;
+      document.getElementById("img15").hidden = true;
+      //document.getElementById("form2").hidden = true;
+      document.getElementById("img7").hidden = false;
+      document.getElementById("img7").src = 'https://thewhirlygirly.files.wordpress.com/2017/04/bow.jpg';
+
+      document.getElementById("img8").hidden = false;
+      document.getElementById("img8").src = 'https://coolinterviews.files.wordpress.com/2013/12/thank-you-asl-2.png?w=1000';
+
+      document.getElementById("img9").hidden = false;
+      document.getElementById("img9").src = 'https://scontent-atl3-1.cdninstagram.com/vp/bdbd11c3fab7820723086c1a9838474e/5D36CC56/t51.2885-15/e35/28766839_217916118950707_896362943145312256_n.jpg?_nc_ht=scontent-atl3-1.cdninstagram.com';
+
+      var lines = "<div id = 'c1' class= 'container' style = 'text-align : center; font-family: Comic Sans MS, Comic Sans, cursive;'><br><input type='text' name='text' id='gr1' style='width: 30px' maxlength='1'><input type='text' name='text' id='gr2' style='width: 30px' maxlength='1'><input type='text' name='text' id='gr3' style='width: 30px' maxlength='1'><input type='text' name='text' id='gr4' style='width: 30px' maxlength='1'><input type='text' name='text' id='gr5' style='width: 30px' maxlength='1'><input type='text' name='text' id='gr6' style='width: 30px' maxlength='1'><input type='text' name='text' id='gr7' style='width: 30px' maxlength='1'><input type='text' name='text' id='gr8' style='width: 30px' maxlength='1'><input type='button' style='font-size: 13.5pt ; font-family: Comic Sans MS, Comic Sans, cursive;' id='button3' name='submit' value='Submit' class='button button1 rounded mx-auto d-block' onclick='check3()'><input type='button' class='buttons button2' style='width: 30px' name='words' value='A' id='a' onclick='gr(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='T' id='t' onclick='gr(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='O' id='o' onclick='gr(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='E' id='e' onclick='gr(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='P' id='p' onclick='gr(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='H' id='h' onclick='gr(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='Y' id='y' onclick='gr(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='N' id='n' onclick='gr(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='U' id='u' onclick='gr(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='K' id='k' onclick='gr(id)'><h1 class='ml103'><span class='text-wrapper3'><span class='letters3' id='greet3' style='text-align: center;'></span></span></h1><input style='font-size: 13.5pt ; font-family: Comic Sans MS, Comic Sans, cursive;' class = 'button button1' type='button' name='next' id='n3' value='Next' onclick='next4()'><input style='font-size: 13.5pt ; font-family: Comic Sans MS, Comic Sans, cursive;' class = 'button button1' type='button' name='show' id='show3' value='Show Answer' onclick='ans3()'>";
+      document.getElementById("result").innerHTML = lines;
+    }
+
+    function next4()
+    {
+      document.getElementById("img1").hidden = true;
+      document.getElementById("img2").hidden = true;
+      document.getElementById("img3").hidden = true;
+      document.getElementById("img4").hidden = true;
+      document.getElementById("img5").hidden = true;
+      document.getElementById("img6").hidden = true;
+      document.getElementById("img7").hidden = true;
+      document.getElementById("img8").hidden = true;
+      document.getElementById("img9").hidden = true;
+      document.getElementById("img13").hidden = true;
+      document.getElementById("img14").hidden = true;
+      document.getElementById("img15").hidden = true;
+      //document.getElementById("form2").hidden = true;
+      document.getElementById("img10").hidden = false;
+      document.getElementById("img10").src = 'https://i.pinimg.com/originals/67/19/44/6719445da4c7ee6004d3552038371a4f.jpg';
+
+      document.getElementById("img11").hidden = false;
+      document.getElementById("img11").src = 'https://media.istockphoto.com/illustrations/stick-figure-icon-illustration-id531852720?k=6&m=531852720&s=612x612&w=0&h=h0j-zK9bW4TYuznYXOt_8NZedUNlm80uRvMsmMOxFJU=';
+
+      document.getElementById("img12").hidden = false;
+      document.getElementById("img12").src = 'https://steemitimages.com/640x0/https://content.pk/wp-content/uploads/2018/04/Urbanization-is-a-Threat-to-Human-Existence.jpg';
+
+      var lines = "<div id = 'c1' class= 'container' style = 'text-align : center; font-family: Comic Sans MS, Comic Sans, cursive;'><br><input type='text' name='text' id='t1' style='width: 30px' maxlength='1'><input type='text' name='text' id='t2' style='width: 30px' maxlength='1'><input type='text' name='text' id='t3' style='width: 30px' maxlength='1'><input type='text' name='text' id='t4' style='width: 30px' maxlength='1'><input type='text' name='text' id='t5' style='width: 30px' maxlength='1'><input type='text' name='text' id='t6' style='width: 30px' maxlength='1'><input type='text' name='text' id='t7' style='width: 30px' maxlength='1'><input type='text' name='text' id='t8' style='width: 30px' maxlength='1'><input type='text' name='text' id='t9' style='width: 30px' maxlength='1'><input type='text' name='text' id='t10' style='width: 30px' maxlength='1'><input type='text' name='text' id='t11' style='width: 30px' maxlength='1'><input type='text' name='text' id='t12' style='width: 30px' maxlength='1'><input type='text' name='text' id='t13' style='width: 30px' maxlength='1'><input type='text' name='text' id='t14' style='width: 30px' maxlength='1'><input type='text' name='text' id='t15' style='width: 30px' maxlength='1'><input type='text' name='text' id='t16' style='width: 30px' maxlength='1'><input type='text' name='text' id='t17' style='width: 30px' maxlength='1'><input type='button' style='font-size: 13.5pt ; font-family: Comic Sans MS, Comic Sans, cursive;' id='button4' name='submit' value='Submit' class='button button1 rounded mx-auto d-block' onclick='check4()'><input type='button' class='buttons button2' style='width: 30px' name='words' value='I' id='i' onclick='t(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='A' id='a' onclick='t(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='H' id='h' onclick='t(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='I' id='i' onclick='t(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='A' id='a' onclick='t(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='L' id='l' onclick='t(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='N' id='n' onclick='t(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='I' id='i' onclick='t(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='M' id='m' onclick='t(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='I' id='i' onclick='t(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='U' id='u' onclick='t(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='C' id='c' onclick='t(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='Z' id='z' onclick='t(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='V' id='v' onclick='t(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='T' id='t' onclick='t(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='O' id='o' onclick='t(id)'><h1 class='ml104'><span class='text-wrapper4'><span class='letters4' id='greet4' style='text-align: center;'></span></span></h1><input style='font-size: 13.5pt ; font-family: Comic Sans MS, Comic Sans, cursive;' class = 'button button1' type='button' name='next' id='n4' value='Next' onclick='next5()'><input style='font-size: 13.5pt ; font-family: Comic Sans MS, Comic Sans, cursive;' class = 'button button1' type='button' name='show' id='show4' value='Show Answer' onclick='ans4()'>";
+      document.getElementById("result").innerHTML = lines;
+    }
+
+    function next5()
+    {
+      document.getElementById("img1").hidden = true;
+      document.getElementById("img2").hidden = true;
+      document.getElementById("img3").hidden = true;
+      document.getElementById("img4").hidden = true;
+      document.getElementById("img5").hidden = true;
+      document.getElementById("img6").hidden = true;
+      document.getElementById("img7").hidden = true;
+      document.getElementById("img8").hidden = true;
+      document.getElementById("img9").hidden = true;
+      document.getElementById("img10").hidden = true;
+      document.getElementById("img11").hidden = true;
+      document.getElementById("img12").hidden = true;
+      //document.getElementById("form2").hidden = true;
+      document.getElementById("img13").hidden = false;
+      document.getElementById("img13").src = 'https://cdn0.iconfinder.com/data/icons/hand-reject/100/shout-512.png';
+
+      document.getElementById("img14").hidden = false;
+      document.getElementById("img14").src = 'https://static.thenounproject.com/png/1008919-200.png';
+
+      document.getElementById("img15").hidden = false;
+      document.getElementById("img15").src = 'https://s3-ap-southeast-1.amazonaws.com/images.humanresourcesonline.net/wp-content/uploads/2018/06/wani-noisy-office-123rf.jpg';
+
+      var lines = "<div id = 'c1' class= 'container' style = 'text-align : center; font-family: Comic Sans MS, Comic Sans, cursive;'><br><input type='text' name='text' id='a1' style='width: 30px' maxlength='1'><input type='text' name='text' id='a2' style='width: 30px' maxlength='1'><input type='text' name='text' id='a3' style='width: 30px' maxlength='1'><input type='text' name='text' id='a4' style='width: 30px' maxlength='1'><input type='button' style='font-size: 13.5pt ; font-family: Comic Sans MS, Comic Sans, cursive;' id='button5' name='submit' value='Submit' class='button button1 rounded mx-auto d-block' onclick='check5()'><input type='button' class='buttons button2' style='width: 30px' name='words' value='P' id='p' onclick='a(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='D' id='d' onclick='a(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='R' id='r' onclick='a(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='T' id='t' onclick='a(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='U' id='u' onclick='a(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='S' id='s' onclick='a(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='V' id='v' onclick='a(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='O' id='o' onclick='a(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='L' id='l' onclick='a(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='N' id='n' onclick='a(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='Y' id='y' onclick='a(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='E' id='e' onclick='a(id)'><input type='button' class='buttons button2' style='width: 30px' name='words' value='I' id='i' onclick='a(id)'><h1 class='ml105'><span class='text-wrapper5'><span class='letters5' id='greet5' style='text-align: center;'></span></span></h1><input style='font-size: 13.5pt ; font-family: Comic Sans MS, Comic Sans, cursive;' class = 'button button1' type='button' name='next' id='n5' value='Next' onclick='next5()'><input style='font-size: 13.5pt ; font-family: Comic Sans MS, Comic Sans, cursive;' class = 'button button1' type='button' name='show' id='show5' value='Show Answer' onclick='ans5()'>";
+      document.getElementById("result").innerHTML = lines;
+      document.getElementById("n5").disabled = true;
+    }
+  </script>
+</head>
+<body>
+  <audio src="Fast-clock-ticking-sound-effect.mp3" id="my_audio" loop="loop"></audio>
+  <audio src="Train Horn Low-SoundBible.com-1744689113.mp3" id="my_end"></audio>
+  <audio src="coindrop.mp3" id="drop" loop="loop"></audio>
+  <script type="text/javascript">
+    window.onload=function(){
+      document.getElementById("time").innerHTML = timeout();
+      var aud = document.getElementById("my_audio").play();
+    }
+  </script>
+  <div class="d-flex justify-content-center bg-secondary mb-3">
+<img src="Logo.png" width="700px" height="700px" style="position: fixed; margin: 0; z-index: -1; opacity: 0.05">
+</div>
+  <script type="text/javascript">
+        var timeLeft=5*60;
+    </script>
+
+    <div class='container angrytext' style="margin-right: -55%; margin-top: -10px; position: absolute; z-index: -1"><img src="clock.png" width="150px" height="150px"></div>
+    <h3><div class="container angrytime" id="time" style="margin-top: 35px; margin-left: 45px; float: left; font-size: 18pt">Timeout</div></h3><br>
+  <h3 id="scoring" style="font-size: 18pt ; font-family: Comic Sans MS, Comic Sans, cursive; color: #EEE609 ; float: right;">Your Score is 0</h3><br><br><br>
+  <center><h2 id="totscore" style="font-family: Comic Sans MS, Comic Sans, cursive; font-weight: bold; color: #EEE609"></h2></center>
+    <center><h2 id="totcoins" style="font-family: Comic Sans MS, Comic Sans, cursive; font-weight: bold; color: #EEE609"></h2></center>
+    <center><img src="coins.gif" id="coins" hidden="true" width="200px" height="200px"></center>
+  <br>
+  <h1 class="ml2" id="congrats" style="text-align: center; font-family: Comic Sans MS, Comic Sans, cursive;"></h1>
+  <div class="container" align="center">
+    <img src="party1.gif" id="part1" hidden="true" width="300px" height="400px">
+    <img src="good job.gif" id="goodjob" hidden="true" width="300px" height="400px">
+    <img src="party1.gif" id="part2" hidden="true" width="300px" height="400px">
+  </div>
+  <br><br>
+  <div class="container" align="center">
+  <img id="img1" width="200px" height="200px" hidden="true" style="border-radius: 10px">&nbsp&nbsp&nbsp&nbsp
+  <img id="img2" width="200px" height="200px" hidden="true" style="border-radius: 10px">&nbsp&nbsp&nbsp&nbsp
+  <img id="img3" width="200px" height="200px" hidden="true" style="border-radius: 10px">&nbsp&nbsp&nbsp&nbsp
+</div>
+<div class="container" align="center">
+  <img id="img4" width="200px" height="200px" hidden="true" style="border-radius: 10px">&nbsp&nbsp&nbsp&nbsp
+  <img id="img5" width="200px" height="200px" hidden="true" style="border-radius: 10px">&nbsp&nbsp&nbsp&nbsp
+  <img id="img6" width="200px" height="200px" hidden="true" style="border-radius: 10px">&nbsp&nbsp&nbsp&nbsp
+</div>
+<div class="container" align="center">
+  <img id="img7" width="200px" height="200px" hidden="true" style="border-radius: 10px">&nbsp&nbsp&nbsp&nbsp
+  <img id="img8" width="200px" height="200px" hidden="true" style="border-radius: 10px">&nbsp&nbsp&nbsp&nbsp
+  <img id="img9" width="200px" height="200px" hidden="true" style="border-radius: 10px">&nbsp&nbsp&nbsp&nbsp
+</div>
+<div class="container" align="center">
+  <img id="img10" width="200px" height="200px" hidden="true" style="border-radius: 10px">&nbsp&nbsp&nbsp&nbsp
+  <img id="img11" width="200px" height="200px" hidden="true" style="border-radius: 10px">&nbsp&nbsp&nbsp&nbsp
+  <img id="img12" width="200px" height="200px" hidden="true" style="border-radius: 10px">&nbsp&nbsp&nbsp&nbsp
+</div>
+<div class="container" align="center">
+  <img id="img13" width="200px" height="200px" hidden="true" style="border-radius: 10px">&nbsp&nbsp&nbsp&nbsp
+  <img id="img14" width="200px" height="200px" hidden="true" style="border-radius: 10px">&nbsp&nbsp&nbsp&nbsp
+  <img id="img15" width="200px" height="200px" hidden="true" style="border-radius: 10px">&nbsp&nbsp&nbsp&nbsp
+</div>
+  <p id="result"></p>
+    <script type="text/javascript">
+      next1();
+    </script>
+
+    
+        
+  
+</body>
+</html>
